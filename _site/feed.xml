@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Your awesome title</title>
+    <title>第三夜</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 14 Sep 2014 21:12:20 +0800</pubDate>
-    <lastBuildDate>Sun, 14 Sep 2014 21:12:20 +0800</lastBuildDate>
+    <link>http://shouhutsh.github.io/</link>
+    <atom:link href="http://shouhutsh.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 15 Sep 2014 08:46:43 +0800</pubDate>
+    <lastBuildDate>Mon, 15 Sep 2014 08:46:43 +0800</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -28,13 +28,33 @@
 
 </description>
         <pubDate>Mon, 15 Sep 2014 04:59:28 +0800</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2014/09/15/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2014/09/15/welcome-to-jekyll.html</guid>
+        <link>http://shouhutsh.github.io/jekyll/update/2014/09/15/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://shouhutsh.github.io/jekyll/update/2014/09/15/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
         
         <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>我的第一篇博客</title>
+        <description>&lt;p&gt;昨晚上心血来潮想这以后应该写日志的，其实本来的想法只是想做一个项目，然后想记录进程以及想法，因为我总是喜欢忘记东西。呵呵～&lt;/p&gt;
+
+&lt;p&gt;因为最近在学习Xinu系统，所以我想着至少自己应该把代码敲一遍，然后就想到了使用github，然后就想着写博客，然后就有了这东西。。不过感觉jekyll还是相当酷的，我也想趁此机会练习下html和css。&lt;/p&gt;
+
+&lt;p&gt;不过现在有个想法是这个站点只能记录静态的网页，如果想要动态交互的话可能会比较吃力，之前京东有个&lt;a href=&quot;http://jae.jd.com/&quot;&gt;云擎&lt;/a&gt;，那次做活动将内存扩到了4G，谁让咱是穷屌丝，不过免费的已经很够用了，我觉得这样也挺好的。以后还可以多练手几种技术。&lt;/p&gt;
+
+&lt;p&gt;不过其实我这人很懒的，以后不知道会不会很勤快的写博客，只当尽力而为吧。&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 15 Sep 2014 00:00:00 +0800</pubDate>
+        <link>http://shouhutsh.github.io/essay/2014/09/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2.html</link>
+        <guid isPermaLink="true">http://shouhutsh.github.io/essay/2014/09/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2.html</guid>
+        
+        
+        <category>essay</category>
         
       </item>
     
