@@ -15,6 +15,7 @@ categories: linux
 ---
 
 如果不行的话，以username为例，我的解决办法是:
+
 - 将`/home/username`拷贝或压缩到某个目录，然后使用`userdel -r username`删除用户。
 - 使用`useradd -m -s /bin/bash username`重新创建一个用户。
 - 使用`passwd username`，然后创建用户密码，重启就可以了。

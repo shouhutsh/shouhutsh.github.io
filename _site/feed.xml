@@ -6,8 +6,8 @@
 </description>
     <link>http://shouhutsh.github.io/</link>
     <atom:link href="http://shouhutsh.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 16 Sep 2014 21:18:03 +0800</pubDate>
-    <lastBuildDate>Tue, 16 Sep 2014 21:18:03 +0800</lastBuildDate>
+    <pubDate>Tue, 16 Sep 2014 21:23:50 +0800</pubDate>
+    <lastBuildDate>Tue, 16 Sep 2014 21:23:50 +0800</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -25,10 +25,13 @@
 
 &lt;hr /&gt;
 
-&lt;p&gt;如果不行的话，以username为例，我的解决办法是:
-- 将&lt;code&gt;/home/username&lt;/code&gt;拷贝或压缩到某个目录，然后使用&lt;code&gt;userdel -r username&lt;/code&gt;删除用户。
-- 使用&lt;code&gt;useradd -m -s /bin/bash username&lt;/code&gt;重新创建一个用户。
-- 使用&lt;code&gt;passwd username&lt;/code&gt;，然后创建用户密码，重启就可以了。&lt;/p&gt;
+&lt;p&gt;如果不行的话，以username为例，我的解决办法是:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;将&lt;code&gt;/home/username&lt;/code&gt;拷贝或压缩到某个目录，然后使用&lt;code&gt;userdel -r username&lt;/code&gt;删除用户。&lt;/li&gt;
+  &lt;li&gt;使用&lt;code&gt;useradd -m -s /bin/bash username&lt;/code&gt;重新创建一个用户。&lt;/li&gt;
+  &lt;li&gt;使用&lt;code&gt;passwd username&lt;/code&gt;，然后创建用户密码，重启就可以了。&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;但是这样创建的用户并没有在root用户组里，可能会出很多问题，需要root用户使用&lt;code&gt;gpasswd -a username root&lt;/code&gt;命令将其添加到root组里。&lt;/p&gt;
 </description>

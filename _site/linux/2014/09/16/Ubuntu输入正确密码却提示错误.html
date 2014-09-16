@@ -75,10 +75,13 @@
 
 <hr />
 
-<p>如果不行的话，以username为例，我的解决办法是:
-- 将<code>/home/username</code>拷贝或压缩到某个目录，然后使用<code>userdel -r username</code>删除用户。
-- 使用<code>useradd -m -s /bin/bash username</code>重新创建一个用户。
-- 使用<code>passwd username</code>，然后创建用户密码，重启就可以了。</p>
+<p>如果不行的话，以username为例，我的解决办法是:</p>
+
+<ul>
+  <li>将<code>/home/username</code>拷贝或压缩到某个目录，然后使用<code>userdel -r username</code>删除用户。</li>
+  <li>使用<code>useradd -m -s /bin/bash username</code>重新创建一个用户。</li>
+  <li>使用<code>passwd username</code>，然后创建用户密码，重启就可以了。</li>
+</ul>
 
 <p>但是这样创建的用户并没有在root用户组里，可能会出很多问题，需要root用户使用<code>gpasswd -a username root</code>命令将其添加到root组里。</p>
 
