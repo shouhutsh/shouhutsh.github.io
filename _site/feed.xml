@@ -6,35 +6,38 @@
 </description>
     <link>http://shouhutsh.github.io/</link>
     <atom:link href="http://shouhutsh.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 15 Sep 2014 08:46:43 +0800</pubDate>
-    <lastBuildDate>Mon, 15 Sep 2014 08:46:43 +0800</lastBuildDate>
+    <pubDate>Tue, 16 Sep 2014 21:18:03 +0800</pubDate>
+    <lastBuildDate>Tue, 16 Sep 2014 21:18:03 +0800</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve --watch&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>Ubuntu输入正确密码却提示错误</title>
+        <description>&lt;p&gt;昨晚不知道电脑发啥神经，没来由的不让我进去。即使输入正确的密码也提示出错，root的也错误。&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;解决办法&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;开机，在GRUB菜单中选择&lt;code&gt;recovery mode&lt;/code&gt;，不进入，按下字母&lt;code&gt;e&lt;/code&gt;。&lt;/li&gt;
+  &lt;li&gt;在出现的脚本中大约倒数第四行左右找到一行 &lt;code&gt;linux /boot/vm......ro recovery nomodeset...&lt;/code&gt;,删除&lt;code&gt;recovery nomodeset&lt;/code&gt;，在行尾添加&lt;code&gt;quiet splash rw init=/bin/bash&lt;/code&gt;。&lt;/li&gt;
+  &lt;li&gt;按F10,启动。&lt;/li&gt;
+  &lt;li&gt;输入&lt;code&gt;passwd&lt;/code&gt;，重新设置密码就可以了。&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;如果不行的话，以username为例，我的解决办法是:
+- 将&lt;code&gt;/home/username&lt;/code&gt;拷贝或压缩到某个目录，然后使用&lt;code&gt;userdel -r username&lt;/code&gt;删除用户。
+- 使用&lt;code&gt;useradd -m -s /bin/bash username&lt;/code&gt;重新创建一个用户。
+- 使用&lt;code&gt;passwd username&lt;/code&gt;，然后创建用户密码，重启就可以了。&lt;/p&gt;
 
+&lt;p&gt;但是这样创建的用户并没有在root用户组里，可能会出很多问题，需要root用户使用&lt;code&gt;gpasswd -a username root&lt;/code&gt;命令将其添加到root组里。&lt;/p&gt;
 </description>
-        <pubDate>Mon, 15 Sep 2014 04:59:28 +0800</pubDate>
-        <link>http://shouhutsh.github.io/jekyll/update/2014/09/15/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://shouhutsh.github.io/jekyll/update/2014/09/15/welcome-to-jekyll.html</guid>
+        <pubDate>Tue, 16 Sep 2014 00:00:00 +0800</pubDate>
+        <link>http://shouhutsh.github.io/linux/2014/09/16/Ubuntu%E8%BE%93%E5%85%A5%E6%AD%A3%E7%A1%AE%E5%AF%86%E7%A0%81%E5%8D%B4%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AF.html</link>
+        <guid isPermaLink="true">http://shouhutsh.github.io/linux/2014/09/16/Ubuntu%E8%BE%93%E5%85%A5%E6%AD%A3%E7%A1%AE%E5%AF%86%E7%A0%81%E5%8D%B4%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AF.html</guid>
         
         
-        <category>jekyll</category>
-        
-        <category>update</category>
+        <category>linux</category>
         
       </item>
     

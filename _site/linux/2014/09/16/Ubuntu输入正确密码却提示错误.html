@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Welcome to Jekyll!</title>
+    <title>Ubuntu输入正确密码却提示错误</title>
     <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://shouhutsh.github.io/jekyll/update/2014/09/15/welcome-to-jekyll.html">
+    <link rel="canonical" href="http://shouhutsh.github.io/linux/2014/09/16/Ubuntu%E8%BE%93%E5%85%A5%E6%AD%A3%E7%A1%AE%E5%AF%86%E7%A0%81%E5%8D%B4%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AF.html">
 </head>
 
 
@@ -57,25 +57,30 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Welcome to Jekyll!</h1>
-    <p class="post-meta">Sep 15, 2014</p>
+    <h1 class="post-title">Ubuntu输入正确密码却提示错误</h1>
+    <p class="post-meta">Sep 16, 2014</p>
   </header>
 
   <article class="post-content">
-    <p>You’ll find this post in your <code>_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code>jekyll serve --watch</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+    <p>昨晚不知道电脑发啥神经，没来由的不让我进去。即使输入正确的密码也提示出错，root的也错误。</p>
 
-<p>To add new posts, simply add a file in the <code>_posts</code> directory that follows the convention <code>YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<p>解决办法</p>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<ul>
+  <li>开机，在GRUB菜单中选择<code>recovery mode</code>，不进入，按下字母<code>e</code>。</li>
+  <li>在出现的脚本中大约倒数第四行左右找到一行 <code>linux /boot/vm......ro recovery nomodeset...</code>,删除<code>recovery nomodeset</code>，在行尾添加<code>quiet splash rw init=/bin/bash</code>。</li>
+  <li>按F10,启动。</li>
+  <li>输入<code>passwd</code>，重新设置密码就可以了。</li>
+</ul>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">&quot;Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">&#39;Tom&#39;</span><span class="p">)</span>
-<span class="c1">#=&gt; prints &#39;Hi, Tom&#39; to STDOUT.</span></code></pre></div>
+<hr />
 
-<p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://github.com/jekyll/jekyll-help">Jekyll’s dedicated Help repository</a>.</p>
+<p>如果不行的话，以username为例，我的解决办法是:
+- 将<code>/home/username</code>拷贝或压缩到某个目录，然后使用<code>userdel -r username</code>删除用户。
+- 使用<code>useradd -m -s /bin/bash username</code>重新创建一个用户。
+- 使用<code>passwd username</code>，然后创建用户密码，重启就可以了。</p>
 
+<p>但是这样创建的用户并没有在root用户组里，可能会出很多问题，需要root用户使用<code>gpasswd -a username root</code>命令将其添加到root组里。</p>
 
   </article>
 

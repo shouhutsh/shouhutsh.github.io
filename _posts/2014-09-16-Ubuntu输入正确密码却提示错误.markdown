@@ -1,0 +1,23 @@
+---
+layout: post
+title: "Ubuntu输入正确密码却提示错误"
+categories: linux
+---
+昨晚不知道电脑发啥神经，没来由的不让我进去。即使输入正确的密码也提示出错，root的也错误。
+
+解决办法
+
+- 开机，在GRUB菜单中选择`recovery mode`，不进入，按下字母`e`。
+- 在出现的脚本中大约倒数第四行左右找到一行 `linux /boot/vm......ro recovery nomodeset...`,删除`recovery nomodeset`，在行尾添加`quiet splash rw init=/bin/bash`。
+- 按F10,启动。
+- 输入`passwd`，重新设置密码就可以了。
+
+---
+
+如果不行的话，以username为例，我的解决办法是:
+- 将`/home/username`拷贝或压缩到某个目录，然后使用`userdel -r username`删除用户。
+- 使用`useradd -m -s /bin/bash username`重新创建一个用户。
+- 使用`passwd username`，然后创建用户密码，重启就可以了。
+
+
+但是这样创建的用户并没有在root用户组里，可能会出很多问题，需要root用户使用`gpasswd -a username root`命令将其添加到root组里。
